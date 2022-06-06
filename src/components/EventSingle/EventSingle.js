@@ -1,0 +1,22 @@
+
+
+export default function EventSingle() {
+    return (
+        <div class="wrapper style2">
+            <article id="main" class="container special">
+                <br/>
+                <br/>
+                <img class="image featured" src="{{ event.image_url }}" alt="" />
+                    <h2> event.title </h2>
+                    <br/>
+                    <h3>Guest: event.guest</h3>
+                    <h3>The Party <b>STARTS</b> on event.date at event.time </h3>
+                    <br/>
+                    <p>event.description</p>
+                <footer>
+                    <a href="{% url 'events' %}" class="button">Back to Events</a>
+                </footer>
+            </article>
+        </div>
+    );
+}
