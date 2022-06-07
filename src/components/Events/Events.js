@@ -4,12 +4,28 @@ import * as eventsService from '../../services/eventsService'
 
 export function Events() {
 
+
+    const EventReelCard = ({event}) => {
+        return (
+        <article>
+            <header>
+                <h3>{event.title}</h3>
+            </header>
+                <a href="/" class="image featured"><img src={event.image_url} alt="" width="auto" height="400" /></a>
+                <p class="event-description">{event.description}</p>
+        </article>
+        );
+    }
+
+
     const [events, setEvents] = useState([])
+    const [latestEvent, setLatestEvent] = useState([])
+
 
     useEffect(() => {
         eventsService.getAllEvents()
         .then(result => {
-            console.log(result)
+            setLatestEvent(result[0])
             setEvents(result);
         });
     },[])
@@ -22,13 +38,13 @@ export function Events() {
                     <header>
                         <h2>Our Next Event</h2>
                     </header>
-                    <img class="image featured" src="latestevent.image_url" alt=""/>
-                    <h2>Event title</h2>
+                    <img class="image featured" src={latestEvent.image_url} alt=""/>
+                    <h2>{latestEvent.title}</h2>
                     <br/>
-                    <h3>Guest: Latest Event.Guest</h3>
-                    <h3>The Party <b>STARTS</b> on latest_event.date at latest_event.time </h3>
+                    <h3>Guest: {latestEvent.guest}</h3>
+                    <h3>The Party <b>STARTS</b> on {latestEvent.date} at {latestEvent.time} </h3>
                     <br/>
-                    <p>latest_event.description </p>
+                    <p>{latestEvent.description} </p>
                 </article>
 
                 <hr />
@@ -41,13 +57,7 @@ export function Events() {
                 <hr />
                 <section class="carousel">
                     <div class="reel">
-                        <article>
-                            <header>
-                                <h3>event.title</h3>
-                            </header>
-                                <a href="/" class="image featured"><img src="event.image_ur" alt="" width="auto" height="400" /></a>
-                                <p class="event-description">event.description</p>
-                        </article>
+                        {events.map(x => <EventReelCard key={x.id} event={x}/>)}
                     </div>
                 </section>
             
