@@ -1,5 +1,5 @@
 
-
+import { Link } from "react-router-dom"
 export  function Header() {
     return(
         <div id="header">
@@ -7,31 +7,31 @@ export  function Header() {
 
         <div class="inner">
             <header>
-                <h1><a href="index.html" id="logo">Beach Bar</a></h1>
+                <h1><Link to="index.html" id="logo">Beach Bar</Link></h1>
                 <hr />
                 <p>Welcome and Have Fun!</p>
             </header>
             <footer>
-                <a href="/banner" class="button circled scrolly">Book Now</a>
+                <Link to="/banner" class="button circled scrolly">Book Now</Link>
             </footer>
         </div>
 
 
         <nav id="nav">
             <ul>
-                <li><a href="/">Home</a></li>
+                <li><Link to="/">Home</Link></li>
                 <li>
-                    <a href="/main-menu">Menu</a>
+                    <Link to="/main-menu">Menu</Link>
                     <ul>
-                        <li><a href="/">Cocktails</a></li>
-                        <li><a href="/">Alcohols</a></li>
-                        <li><a href="/">Beers</a></li>
-                        <li><a href="/soft-drinks-menu">Soft Drinks</a></li>
+                        <li><Link to="/">Cocktails</Link></li>
+                        <li><Link to="/">Alcohols</Link></li>
+                        <li><Link to="/">Beers</Link></li>
+                        <li><Link to="/soft-drinks-menu">Soft Drinks</Link></li>
                     </ul>
                 </li>
-                <li><a href="/events">Events</a></li>
-                <li><a href="/photo-gallery">Photo Gallery</a></li>
-                <li><a href="/contacts">Contacts</a></li>
+                <li><Link to="/events">Events</Link></li>
+                <li><Link to="/photo-gallery">Photo Gallery</Link></li>
+                <li><Link to="/contacts">Contacts</Link></li>
             </ul>
         </nav>
 
