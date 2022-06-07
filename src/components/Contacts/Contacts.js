@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 
 export function Contacts() {
      const onSubmit = (event) => {
@@ -12,7 +12,11 @@ export function Contacts() {
          const phone = formData.get('phone')
          const message = formData.get('message')
          console.log(email, phone, message)
+         navigate('/')
      }
+
+     const navigate = useNavigate();
+
     return (
         <div id="down" class="wrapper style1">
             <div class="container">

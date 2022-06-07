@@ -1,9 +1,23 @@
+import { useState, useEffect } from "react";
+import { EventCard } from "./EventCard";
+import * as eventsService from '../../services/eventsService'
 
 export function Events() {
+
+    const [events, setEvents] = useState([])
+
+    useEffect(() => {
+        eventsService.getAllEvents()
+        .then(result => {
+            console.log(result)
+            setEvents(result);
+        });
+    },[])
+
+
     return (
         <div id="down" class="wrapper style1">
             <div class="container">
-
                 <article id="main" class="container special">
                     <header>
                         <h2>Our Next Event</h2>
@@ -21,19 +35,9 @@ export function Events() {
                 <header>
                     <h2>Upcoming Events</h2>
                 </header>
-
                 <div class="row">
-                    <article class="col-4 col-12-mobile special">
-                        <a href="/"><h2 class="reel-description">event.title</h2></a>
-                        <a href="/" class="image featured"><img class="imageZoom" src="event.image_url" alt="" height="300" /></a>
-                        <br/>
-                        <h3>Guest:  event.guest </h3>
-                        <h3>The Party <b>STARTS</b> on  event.date  at  event.time</h3>
-                        <br/>
-                        <p class="event-description"> event.description </p>
-                    </article>
+                    {events.map(x => <EventCard key={x.id} event={x}/>)}
                 </div>
-                
                 <hr />
                 <section class="carousel">
                     <div class="reel">

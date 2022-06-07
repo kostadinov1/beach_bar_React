@@ -5,17 +5,16 @@ export  function Header() {
         <div id="header">
 
 
-        <div class="inner">
+        <div className="inner">
             <header>
                 <h1><Link to="index.html" id="logo">Beach Bar</Link></h1>
                 <hr />
                 <p>Welcome and Have Fun!</p>
             </header>
             <footer>
-                <Link to="/banner" class="button circled scrolly">Book Now</Link>
+                <Link to="/banner" className="button circled scrolly">Book Now</Link>
             </footer>
         </div>
-
 
         <nav id="nav">
             <ul>
