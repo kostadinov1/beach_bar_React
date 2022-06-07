@@ -1,12 +1,57 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,400italic,600");
 @import url("fontawesome-all.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
-/*
-	Helios by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
+/*--------------------------------------------------------------------------*/
+/*      MY IMPROVISED CSS*/
+/*--------------------------------------------------------------------------*/
 
+
+#title {
+	font-family: Lobster, cursive;
+}
+
+#logo {
+	font-family: 'Lobster', cursive;
+}
+#contact-message {
+	color: #ffffff;
+}
+
+.contact-form {
+	background-color: #1C0920;
+	padding: 2em;
+	margin: auto;
+}
+
+.imageZoom {
+	  transition: transform ease-in-out 0.3s;
+	width: 300px;
+	height: 300px;
+}
+
+.imageZoom:hover {
+	transform: scale(1.1);
+}
+
+
+.event-description {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+
+}
+.reel-description {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+
+}
+
+/*--------------------------------------------------------------------------*/
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -1788,7 +1833,11 @@ input, select, textarea {
 		.image img {
 			display: block;
 			width: 100%;
+
+
+
 		}
+
 
 		.image.fit {
 			display: block;
@@ -2176,7 +2225,7 @@ input, select, textarea {
 
 	#header {
 		position: relative;
-		background-image: url("../../images/header.jpg");
+		background-image: url(../../beach_images/sunset-beach.jpg);
 		background-size: cover;
 		background-position: center center;
 		background-attachment: fixed;
@@ -2194,6 +2243,7 @@ input, select, textarea {
 		}
 
 		#header .inner {
+
 			position: relative;
 			z-index: 1;
 			margin: 0;
@@ -2325,6 +2375,7 @@ input, select, textarea {
 			}
 
 			#nav > ul > li {
+				font-family: 'RockSalt', cursive;
 				display: inline-block;
 				margin: -9px 0.5em 0 0.5em;
 				border-radius: 0.5em;
@@ -2349,6 +2400,7 @@ input, select, textarea {
 				}
 
 				#nav > ul > li > ul {
+
 					display: none;
 				}
 
@@ -3052,6 +3104,7 @@ input, select, textarea {
 			}
 
 				#header .inner {
+
 					padding-top: 1.5em;
 					padding-left: 1em;
 					padding-right: 1em;

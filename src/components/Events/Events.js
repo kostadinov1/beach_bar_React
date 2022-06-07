@@ -1,5 +1,5 @@
 
-export default function Events() {
+export function Events() {
     return (
         <div id="down" class="wrapper style1">
             <div class="container">

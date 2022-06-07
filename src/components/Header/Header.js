@@ -19,19 +19,19 @@ export  function Header() {
 
         <nav id="nav">
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li>
-                    <a href="/">Menu</a>
+                    <a href="/main-menu">Menu</a>
                     <ul>
                         <li><a href="/">Cocktails</a></li>
                         <li><a href="/">Alcohols</a></li>
                         <li><a href="/">Beers</a></li>
-                        <li><a href="/">Soft Drinks</a></li>
+                        <li><a href="/soft-drinks-menu">Soft Drinks</a></li>
                     </ul>
                 </li>
-                <li><a href="left-sidebar.html">Events</a></li>
-                <li><a href="right-sidebar.html">Photo Gallery</a></li>
-                <li><a href="no-sidebar.html">Contacts</a></li>
+                <li><a href="/events">Events</a></li>
+                <li><a href="/photo-gallery">Photo Gallery</a></li>
+                <li><a href="/contacts">Contacts</a></li>
             </ul>
         </nav>
 
