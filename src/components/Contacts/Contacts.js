@@ -1,10 +1,12 @@
 
+import { Link } from "react-router-dom";
+
 export function Contacts() {
     return (
         <div id="down" class="wrapper style1">
             <div class="container">
                 <section >
-                    {/* <div class="mapouter"><div class="gmap_canvas"><iframe width="100%" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Balchik,Delano,%20Bulgaria&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.whatismyip-address.com/divi-discount/"></a><br/><style>.mapouter{position:relative;text-align:center;height:auto;width:auto;}</style><style>.gmap_canvas{overflow:hidden;background:none!important;height:auto;width:auto;}</style></div></div> */}
+                    <div class="mapouter"><div class="gmap_canvas"><iframe title="google-map" width="100%" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Balchik,Delano,%20Bulgaria&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><Link to="https://www.whatismyip-address.com/divi-discount/"></Link><br/><style>.mapouter position:relative;text-align:center;height:auto;width:auto;</style><style>.gmap_canvas overflow:hidden;background:none!important;height:auto;width:auto;</style></div></div>
                 </section>
                 <section>
                     <header>
