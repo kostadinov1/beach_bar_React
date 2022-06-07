@@ -1,7 +1,18 @@
 
 import { Link } from "react-router-dom";
 
+
 export function Contacts() {
+     const onSubmit = (event) => {
+         event.preventDefault()
+         
+         let formData = new FormData(event.currentTarget);
+
+         const email = formData.get('email')
+         const phone = formData.get('phone')
+         const message = formData.get('message')
+         console.log(email, phone, message)
+     }
     return (
         <div id="down" class="wrapper style1">
             <div class="container">
@@ -21,21 +32,26 @@ export function Contacts() {
                 </header>
                 <br/>
                 <h3 >Contact Form</h3>
-                <form method="post" action="{% url 'contacts' %}">
-                    <div class="row gtr-uniform">
-                        <div class="col-6 col-12-xsmall">
-                        </div>
-                        <div class="col-6 col-12-xsmall">
-                        </div>
-                        <div class="col-12">
-                        </div>
-                        <div class="col-12">
-                            <ul class="actions">
-                                <li><input type="submit" value="Send Message" /></li>
-                                <li><input type="reset" value="Reset" /></li>
-                            </ul>
-                        </div>
+                <form onSubmit={onSubmit}>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Email address</label>
+                        <input name="email" type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
                     </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Phone Number</label>
+                        <input name="phone" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Your Phone Number"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Example textarea</label>
+                        <textarea name="message" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Enter Your Message"></textarea>
+                    </div>
+                    <div class="col-12">
+                    <br/>
+                    <ul class="actions">
+                        <li><input type="submit" value="Send Message" /></li>
+                        <li><input type="reset" value="Reset" /></li>
+                    </ul>
+                </div>
                 </form>
             </div>
         </div>
