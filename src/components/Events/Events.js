@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { EventCard } from "./EventCard";
 import * as eventsService from '../../services/eventsService'
+import { Link } from "react-router-dom";
 
 export function Events() {
 
@@ -11,7 +12,7 @@ export function Events() {
             <header>
                 <h3>{event.title}</h3>
             </header>
-                <a href="/" class="image featured"><img src={event.image_url} alt="" width="auto" height="400" /></a>
+                <Link to={`/event-single/${event.id}`} class="image featured"><img src={event.image_url} alt="" width="auto" height="400" /></Link>
                 <p class="event-description">{event.description}</p>
         </article>
         );
@@ -25,7 +26,7 @@ export function Events() {
     useEffect(() => {
         eventsService.getAllEvents()
         .then(result => {
-            setLatestEvent(result[0])
+            setLatestEvent(result[result.length-1])
             setEvents(result);
         });
     },[])

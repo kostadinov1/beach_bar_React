@@ -19,7 +19,7 @@ function App() {
 					<Route path="/main-menu" element={<MainMenu />}/>
 					<Route path="/soft-drinks-menu" element={<SoftDrinksMenu />}/>
 					<Route path="/events" element={<Events />}/>
-					<Route path="/event-single/" element={<EventSingle />}/>
+					<Route path="/event-single/:eventId" element={<EventSingle />}/>
 					<Route path="/photo-gallery" element={<PhotoGallery />}/>
 					<Route path="/contacts" element={<Contacts />}/>	
 				</Routes>
