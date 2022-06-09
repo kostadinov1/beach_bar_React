@@ -1,6 +1,32 @@
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { getMainMenu } from "../../services/menuService";
 
 
 export default function MainMenu() {
+
+    const [products, setProducts ] = useState([])
+
+    useEffect(()=>{
+        getMainMenu().then(result =>{
+            console.log(result);
+            setProducts(result);
+        });
+    }, [])
+
+
+    const ProductCard = ({product}) => {
+        return(
+                <article>
+                    <Link to="/" class="image featured"><img src={product.image_url} alt="" width="auto" height="400" /></Link>
+                        <header>
+                        <h3><a href="/"> {products.name}</a></h3>
+                        <h4>Price: {product.price} lv.</h4>
+                        </header>
+                    <p>{product.description} </p>
+                </article>
+        )
+    }
 
     return (
         <div id="down" class="wrapper style2">
@@ -11,15 +37,8 @@ export default function MainMenu() {
                         <h2>Ice Cream</h2>
                     </header>
                     <div class="reel">
+                    {products.map(product => <ProductCard key={product.id} product={product}/>)}
 
-                        <article>
-                            <a href="/" class="image featured"><img src="ice_cream.image_url" alt="" width="auto" height="400" /></a>
-                            <header>
-                                <h3><a href="/"> ice_cream.name</a></h3>
-                                <h4>Price: ice_cream.price| floatformat:2 lv.</h4>
-                            </header>
-                            <p>ice_cream.description </p>
-                        </article>
                     </div>
                 </section>
 
