@@ -6,14 +6,24 @@ import { getMainMenu } from "../../services/menuService";
 export default function MainMenu() {
 
     const [products, setProducts ] = useState([])
+    const [cocktails, setCocktails] = useState([])
+    const [alcohols, setAlcoholss] = useState([])
+    const [beers, setBeers] = useState([])
+    const [iceCreams, setIceCreams] = useState([])
+
 
     useEffect(()=>{
         getMainMenu().then(result =>{
-            console.log(result);
             setProducts(result);
+            setCocktails(result.filter((item) => item.category === 1))
+            setAlcoholss(result.filter((item) => item.category === 2))
+            setBeers(result.filter((item) => item.category === 3))
+            setIceCreams(result.filter((item) => item.category === 4))
+
+
         });
     }, [])
-
+    console.log(cocktails);
 
     const ProductCard = ({product}) => {
         return(
@@ -37,80 +47,46 @@ export default function MainMenu() {
                         <h2>Ice Cream</h2>
                     </header>
                     <div class="reel">
-                    {products.map(product => <ProductCard key={product.id} product={product}/>)}
+                    {iceCreams.map(product => <ProductCard key={product.id} product={product}/>)}
 
                     </div>
                 </section>
 
                 <section class="carousel">
                     <header>
-                        <h2>Ice Cream</h2>
+                        <h2>Coctails</h2>
                     </header>
                     <div class="reel">
+                    {cocktails.map(product => <ProductCard key={product.id} product={product}/>)}
 
-                        <article>
-                        <a href="/" class="image featured"><img src="ice_cream.image_url" alt="" width="auto" height="400" /></a>
-                            <header>
-                                <h3><a href="/"> ice_cream.name</a></h3>
-                                <h4>Price: ice_cream.price| floatformat:2 lv.</h4>
-                            </header>
-                            <p>ice_cream.description </p>
-                        </article>
+
                     </div>
                 </section>
 
                 <section class="carousel">
                     <header>
-                        <h2>Ice Cream</h2>
+                        <h2>Beers</h2>
                     </header>
                     <div class="reel">
+                    {beers.map(product => <ProductCard key={product.id} product={product}/>)}
 
-                        <article>
-                            <a href="/" class="image featured"><img src="ice_cream.image_url" alt="" width="auto" height="400" /></a>
-                            <header>
-                                <h3><a href="/"> ice_cream.name</a></h3>
-                                <h4>Price: ice_cream.price| floatformat:2 lv.</h4>
-                            </header>
-                            <p>ice_cream.description </p>
-                        </article>
                     </div>
                 </section>
                 
                 
                 <section class="carousel">
                     <header>
-                        <h2>Ice Cream</h2>
+                        <h2>Alcohols</h2>
                     </header>
                     <div class="reel">
 
-                    <article>
-                            <a href="/" class="image featured"><img src="ice_cream.image_url" alt="" width="auto" height="400" /></a>
-                            <header>
-                                <h3><a href="/"> ice_cream.name</a></h3>
-                                <h4>Price: ice_cream.price| floatformat:2 lv.</h4>
-                            </header>
-                            <p>ice_cream.description </p>
-                        </article>
+                    {alcohols.map(product => <ProductCard key={product.id} product={product}/>)}
+
                     </div>
                 </section>
 
 
-                <section class="carousel">
-                    <header>
-                        <h2>Ice Cream</h2>
-                    </header>
-                    <div class="reel">
 
-                    <article>
-                            <a href="/" class="image featured"><img src="ice_cream.image_url" alt="" width="auto" height="400" /></a>
-                            <header>
-                                <h3><a href="/"> ice_cream.name</a></h3>
-                                <h4>Price: ice_cream.price| floatformat:2 lv.</h4>
-                            </header>
-                            <p>ice_cream.description </p>
-                        </article>
-                    </div>
-                </section>
 
 
                 <header>
